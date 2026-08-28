@@ -3,3 +3,4 @@
 node_modules/
 # originais em alta resolução baixados do Instagram (fonte de trabalho)
 img/ig/
+.env*
