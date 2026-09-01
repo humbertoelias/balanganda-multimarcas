@@ -618,3 +618,26 @@ h1.display.hero-title{max-width:22ch;font-size:clamp(1.55rem,2.9vw,2.7rem);line-
    Se o JS falhar, o preloader some sozinho aos 7s. */
 #preloader{animation:preFail 1s var(--ease) 7s forwards}
 @keyframes preFail{to{opacity:0;visibility:hidden;pointer-events:none}}
+
+/* ---------- 31. FAQ ---------- */
+.faq{max-width:760px;margin-inline:auto;margin-top:clamp(28px,3.4vw,46px);border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:18px;list-style:none;
+  cursor:pointer;padding:clamp(18px,2vw,24px) 4px;font-family:var(--font-display);
+  font-size:clamp(1.12rem,1.4vw,1.38rem);font-weight:400;color:var(--silver-2);transition:color .4s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::marker{content:none}
+.faq summary:hover{color:#fff}
+.faq summary:focus-visible{outline:1px solid var(--gold);outline-offset:4px;border-radius:4px}
+.faq-ic{position:relative;width:22px;height:22px;flex:0 0 auto}
+.faq-ic::before,.faq-ic::after{content:"";position:absolute;inset:0;margin:auto;background:var(--gold);
+  transition:transform .5s var(--ease)}
+.faq-ic::before{width:15px;height:1px}
+.faq-ic::after{width:1px;height:15px}
+.faq-item[open] .faq-ic{transform:rotate(0)}
+.faq-item[open] .faq-ic::after{transform:rotate(90deg)}
+.faq-item[open] .faq-ic::before{transform:rotate(180deg)}
+.faq-a{padding:2px 4px clamp(18px,2vw,26px);max-width:62ch}
+.faq-a p{color:var(--muted);font-size:.98rem;line-height:1.78}
+.faq-item[open] .faq-a{animation:faqIn .55s var(--ease)}
+@keyframes faqIn{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
